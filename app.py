@@ -10,3 +10,5 @@ def serve_index():
 app.register_blueprint(api_routes)#telling Flask to include the routes from the routes.py file
 if __name__=="__main__": #entry point
   app.run(debug=True)#starting flask in debug mode
+if __name__=="__main__":
+  app.run(host="0.0.0.0",port=8000)
