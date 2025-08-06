@@ -1,7 +1,7 @@
 from flask import Flask, send_from_directory #importing Flask from flask module
 from routes import api_routes #having routes in a separate file
 
-app = Flask(__name__) #telling Flask where to look for resources
+app = Flask(__name__, static_folder='static', static_url_path='') #telling Flask where to look for resources
 
 @app.route('/')
 def serve_index():
