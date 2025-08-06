@@ -7,19 +7,7 @@ from datetime import datetime  # used to get the current date and time
 api_routes = Blueprint('api_routes', __name__)  # created a blueprint
 
 # GET all comments
-@api_routes.route('/comments', methods=['GET'])
-def get_comments():
-    return jsonify(comments), 200  # when a GET request is made to /comments, it returns the comments list as a JSON response
-
-# POST a new comment
-@api_routes.route('/comments', methods=['POST'])
-def add_comment():
-    data = request.json
-    new_comment = {
-        "id": len(comments) + 1,
-        "text": data.get("text", ""),
-        "author": data.get("author", ""),
-        "timestamp": datetime.utcnow().isoformat()
+utcnow().isoformat()
     }
     comments.append(new_comment)  # adds the new comment to the comments list
     return jsonify(new_comment), 201
