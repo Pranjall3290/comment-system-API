@@ -48,11 +48,12 @@ def delete_comment(comment_id):
 @api_routes.route('/ping', methods=['GET'])
 def ping():
     return jsonify({"status": "Server is running"}), 200
-    @api_routes.route('/stats', methods=['GET'])
-    def stats():
-        total = len(comments)
-        unique_authors = len(set(c["author"] for c in comments))
-        return jsonify({
-            "total_comments": total,
-            "unique_authors": unique_authors
-        }), 200
+
+@api_routes.route('/stats', methods=['GET'])
+def stats():
+    total = len(comments)
+    unique_authors = len(set(c["author"] for c in comments))
+    return jsonify({
+        "total_comments": total,
+        "unique_authors": unique_authors
+    }), 200
