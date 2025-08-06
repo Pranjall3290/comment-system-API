@@ -45,3 +45,14 @@ def delete_comment(comment_id):
     return jsonify({"error": "Comment not found"}), 404
 
 # right now we are using an in memory list to store the comments. thus, the comments will be lost when the server is stopped
+@api_routes.route('/ping', methods=['GET'])
+def ping():
+    return jsonify({"status": "Server is running"}), 200
+    @api_routes.route('/stats', methods=['GET'])
+    def stats():
+        total = len(comments)
+        unique_authors = len(set(c["author"] for c in comments))
+        return jsonify({
+            "total_comments": total,
+            "unique_authors": unique_authors
+        }), 200
