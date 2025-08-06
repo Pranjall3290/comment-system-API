@@ -1,0 +1,88 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, peachpuff, #fff176, #ffb6c1, #87cefa, #dabfff);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  color: #333;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+.container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  color: #6a0dad;
+  text-shadow: 0 0 5px #fff;
+}
+
+input, button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #ff80ab;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  background-color: #f06292;
+  transform: scale(1.05);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #ffffffcc;
+  border-left: 5px solid #ff80ab;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+li button {
+  float: right;
+  background-color: #e91e63;
+}
+
+.sparkle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.ibb.co/xHn5Frv/glitter.gif');
+  background-size: cover;
+  opacity: 0.15;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
